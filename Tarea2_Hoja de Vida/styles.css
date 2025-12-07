@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    color: #1f2933;
+}
+
+.resume {
+    max-width: 980px;
+    margin: 40px auto;
+    display: flex;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 36%;
+    background: linear-gradient(180deg, #101722 0%, #131a28 50%, #111827 100%);
+    color: #f8fafc;
+    padding: 36px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.name {
+    margin: 18px 0 6px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.role {
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #93c5fd;
+}
+
+.sidebar-title {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e0f2fe;
+}
+
+.contact-list,
+.sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.contact-list .label,
+.sidebar-list .label {
+    display: inline-block;
+    font-weight: 600;
+    color: #60a5fa;
+    min-width: 88px;
+}
+
+.references-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: rgba(15, 23, 42, 0.35);
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.references-table th,
+.references-table td {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    padding: 10px 12px;
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.references-table th {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #cbd5f5;
+    background: rgba(30, 41, 59, 0.7);
+}
+
+.references-table td {
+    color: #f8fafc;
+}
+
+.content {
+    flex: 1;
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.content-header {
+    border-bottom: 2px solid #111827;
+    padding-bottom: 20px;
+}
+
+.content-name {
+    margin: 0;
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.content-role {
+    margin: 6px 0 0;
+    font-size: 1.05rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1d4ed8;
+}
+
+.about,
+.experience,
+.education,
+.skills,
+.languages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about h3,
+.experience h3,
+.education h3,
+.skills h3,
+.languages h3 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #0f172a;
+}
+
+.about p {
+    margin: 0;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.item-year {
+    font-weight: 700;
+    color: #1d4ed8;
+    min-width: 60px;
+    letter-spacing: 1px;
+}
+
+.item h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #1f2937;
+}
+
+.item p {
+    margin: 0;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.tag-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.tag-list li {
+    background: #e2e8f0;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 960px) {
+    .resume {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .content {
+        padding: 32px 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .content-name {
+        font-size: 1.8rem;
+    }
+
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

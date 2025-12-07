@@ -1,0 +1,27 @@
+/* Fondo de la página */
+body {
+  background-color: #f0f8ff;   /* Azul claro */
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* Estilo para los párrafos */
+p {
+  color: #987df0;             /* Texto gris oscuro */
+  font-size: 18px;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  color: darkblue;
+}
+
+/* Enlaces */
+a {
+  color: green;
+  text-decoration: none;      /* Quita el subrayado */
+}
+
+a:hover {
+  text-decoration: underline; /* Se subraya al pasar el mouse */
+}

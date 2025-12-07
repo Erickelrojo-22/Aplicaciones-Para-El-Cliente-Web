@@ -1,0 +1,377 @@
+/* ====================================
+   ESTILOS GENERALES Y RESET
+   ==================================== */
+
+/* Aplicar box-sizing a todos los elementos para facilitar el cálculo de tamaños */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total */
+}
+
+/* Estilos del body (cuerpo de la página) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fondo degradado morado-azul */
+    min-height: 100vh; /* Altura mínima del 100% del viewport */
+    padding: 20px; /* Espacio interno de 20px en todos los lados */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+
+/* ====================================
+   CONTENEDOR PRINCIPAL
+   ==================================== */
+
+/* Contenedor que centra todo el contenido */
+.container {
+    max-width: 1200px; /* Ancho máximo de 1200px */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    background: white; /* Fondo blanco para el contenido */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    overflow: hidden; /* Oculta contenido que sobresale */
+}
+
+/* ====================================
+   ENCABEZADO
+   ==================================== */
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Mismo gradiente del body */
+    color: white; /* Texto blanco */
+    padding: 30px; /* Espacio interno */
+    text-align: center; /* Centra el texto */
+}
+
+header h1 {
+    font-size: 2.5em; /* Tamaño grande para el título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra en el texto */
+}
+
+header p {
+    font-size: 1.1em; /* Tamaño ligeramente mayor al texto normal */
+    opacity: 0.9; /* Ligeramente transparente */
+}
+
+/* ====================================
+   SECCIÓN DEL FORMULARIO
+   ==================================== */
+
+.form-section {
+    padding: 40px; /* Espacio interno generoso */
+    border-bottom: 2px solid #f0f0f0; /* Línea divisoria inferior */
+}
+
+.form-section h2 {  
+    color: #333; /* Color gris oscuro */
+    margin-bottom: 25px; /* Espacio debajo del subtítulo */
+    font-size: 1.8em; /* Tamaño de fuente grande */
+    border-left: 5px solid #667eea; /* Barra de color a la izquierda */
+    padding-left: 15px; /* Espacio entre la barra y el texto */
+}
+
+/* ====================================
+   GRUPOS DE FORMULARIO
+   ==================================== */
+
+/* Cada grupo contiene una etiqueta, input y mensaje de error */
+.form-group {
+    margin-bottom: 20px; /* Espacio entre campos */
+}
+
+/* Estilos para las etiquetas */
+.form-group label {
+    display: block; /* Hace que la etiqueta ocupe toda la línea */
+    margin-bottom: 8px; /* Espacio entre etiqueta e input */
+    color: #555; /* Color gris medio */
+    font-weight: 600; /* Texto semi-negrita */
+    font-size: 0.95em; /* Tamaño ligeramente menor */
+}
+
+/* Estilos para inputs y selects */
+.form-group input,
+.form-group select {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 12px 15px; /* Espacio interno */
+    border: 2px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente normal */
+    transition: all 0.3s ease; /* Transición suave para efectos hover/focus */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+/* Efecto cuando el usuario hace clic o selecciona un campo */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none; /* Quita el borde por defecto del navegador */
+    border-color: #667eea; /* Cambia el borde a color morado */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); /* Sombra suave de color */
+}
+
+/* Texto de ayuda pequeño debajo de los inputs */
+.form-group small {
+    display: block; /* Hace que ocupe toda la línea */
+    margin-top: 5px; /* Espacio arriba */
+    color: #888; /* Color gris claro */
+    font-size: 0.85em; /* Tamaño pequeño */
+}
+
+/* ====================================
+   MENSAJES DE ERROR
+   ==================================== */
+
+/* Mensajes de error que aparecen cuando la validación falla */
+.error-message {
+    display: block; /* Ocupa toda la línea */
+    color: #e74c3c; /* Color rojo para errores */
+    font-size: 0.85em; /* Tamaño pequeño */
+    margin-top: 5px; /* Espacio arriba */
+    min-height: 20px; /* Altura mínima para evitar saltos en el diseño */
+}
+
+/* Estilo para inputs con error */
+.form-group input.error,
+.form-group select.error {
+    border-color: #e74c3c; /* Borde rojo */
+    background-color: #fff5f5; /* Fondo rojo muy claro */
+}
+
+/* ====================================
+   BOTONES
+   ==================================== */
+
+/* Contenedor de botones con flexbox */
+.form-buttons {
+    display: flex; /* Usa flexbox para alinear botones */
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 30px; /* Espacio arriba */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+}
+
+/* Estilos base para todos los botones */
+.btn {
+    flex: 1; /* Los botones ocupan el mismo espacio */
+    padding: 14px 28px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente normal */
+    font-weight: 600; /* Texto semi-negrita */
+    cursor: pointer; /* Cambia el cursor a manita */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+    min-width: 150px; /* Ancho mínimo */
+}
+
+/* Botón principal (guardar) */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente morado */
+    color: white; /* Texto blanco */
+}
+
+/* Efecto hover del botón principal */
+.btn-primary:hover {
+    transform: translateY(-2px); /* Se eleva 2px */
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); /* Sombra más pronunciada */
+}
+
+/* Botón secundario (limpiar) */
+.btn-secondary {
+    background: #95a5a6; /* Gris */
+    color: white; /* Texto blanco */
+}
+
+/* Efecto hover del botón secundario */
+.btn-secondary:hover {
+    background: #7f8c8d; /* Gris más oscuro */
+    transform: translateY(-2px); /* Se eleva 2px */
+}
+
+/* Efecto cuando se presiona un botón */
+.btn:active {
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* ====================================
+   SECCIÓN DE CLIENTES
+   ==================================== */
+
+.clientes-section {
+    padding: 40px; /* Espacio interno */
+}
+
+.clientes-section h2 {
+    color: #333; /* Color gris oscuro */
+    margin-bottom: 20px; /* Espacio debajo */
+    font-size: 1.8em; /* Tamaño grande */
+    border-left: 5px solid #27ae60; /* Barra verde a la izquierda */
+    padding-left: 15px; /* Espacio entre barra y texto */
+}
+
+/* ====================================
+   ESTADÍSTICAS
+   ==================================== */
+
+.stats {
+    background: #f8f9fa; /* Fondo gris muy claro */
+    padding: 15px 20px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo */
+    border-left: 4px solid #667eea; /* Barra de color a la izquierda */
+}
+
+.stats p {
+    margin: 0; /* Sin margen */
+    color: #555; /* Color gris medio */
+    font-size: 1.1em; /* Tamaño ligeramente mayor */
+}
+
+.stats strong {
+    color: #667eea; /* Color morado para el número */
+    font-size: 1.2em; /* Tamaño mayor */
+}
+
+/* ====================================
+   TABLA DE CLIENTES
+   ==================================== */
+
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    margin-top: 20px; /* Espacio arriba */
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%; /* Ocupa todo el ancho */
+    border-collapse: collapse; /* Elimina espacios entre celdas */
+    background: white; /* Fondo blanco */
+}
+
+/* Celdas del encabezado */
+table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente morado */
+    color: white; /* Texto blanco */
+    padding: 15px; /* Espacio interno */
+    text-align: left; /* Alinea texto a la izquierda */
+    font-weight: 600; /* Semi-negrita */
+    position: sticky; /* Hace que el encabezado sea fijo al hacer scroll */
+    top: 0; /* Lo posiciona arriba */
+}
+
+/* Celdas del cuerpo de la tabla */
+table tbody td {
+    padding: 12px 15px; /* Espacio interno */
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria inferior */
+    color: #555; /* Color gris medio */
+}
+
+/* Efecto hover en las filas */
+table tbody tr:hover {
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Columna de número (#) */
+table tbody td:first-child {
+    font-weight: 600; /* Semi-negrita */
+    color: #667eea; /* Color morado */
+}
+
+/* ====================================
+   BOTÓN DE ELIMINAR
+   ==================================== */
+
+/* Botón para eliminar clientes en la tabla */
+.btn-eliminar {
+    background-color: #e74c3c; /* Rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de manita */
+    font-size: 0.9em; /* Tamaño ligeramente menor */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover del botón eliminar */
+.btn-eliminar:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+    transform: scale(1.05); /* Se agranda ligeramente */
+}
+
+/* ====================================
+   MENSAJE VACÍO
+   ==================================== */
+
+/* Mensaje que aparece cuando no hay clientes */
+.mensaje-vacio {
+    text-align: center; /* Centra el texto */
+    padding: 60px 20px; /* Espacio interno generoso */
+    color: #888; /* Color gris claro */
+}
+
+.mensaje-vacio p {
+    font-size: 1.2em; /* Tamaño grande */
+    margin: 0; /* Sin margen */
+}
+
+/* ====================================
+   DISEÑO RESPONSIVO
+   ==================================== */
+
+/* Estilos para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Reduce el tamaño del título */
+    }
+    
+    .form-section,
+    .clientes-section {
+        padding: 25px; /* Reduce el padding */
+    }
+    
+    .form-buttons {
+        flex-direction: column; /* Apila los botones verticalmente */
+    }
+    
+    .btn {
+        width: 100%; /* Los botones ocupan todo el ancho */
+    }
+    
+    /* Hace que la tabla sea más compacta */
+    table {
+        font-size: 0.9em; /* Reduce el tamaño de fuente */
+    }
+    
+    table thead th,
+    table tbody td {
+        padding: 10px; /* Reduce el padding */
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduce el padding del body */
+    }
+    
+    header {
+        padding: 20px; /* Reduce el padding del header */
+    }
+    
+    header h1 {
+        font-size: 1.5em; /* Reduce más el título */
+    }
+    
+    .form-section,
+    .clientes-section {
+        padding: 15px; /* Reduce más el padding */
+    }
+    
+    /* Oculta algunas columnas en móviles para ahorrar espacio */
+    table thead th:nth-child(4),
+    table tbody td:nth-child(4),
+    table thead th:nth-child(6),
+    table tbody td:nth-child(6) {
+        display: none; /* Oculta las columnas de cédula y dirección en móviles */
+    }
+}

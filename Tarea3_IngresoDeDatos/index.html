@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres UTF-8 para soportar tildes y caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive (adaptable a diferentes tamaños de pantalla) -->
+    <title>Registro de Clientes</title> <!-- Título que aparece en la pestaña del navegador -->
+    
+    <!-- Enlace al archivo de estilos CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor principal de toda la aplicación -->
+    <div class="container">
+        <!-- Encabezado de la página -->
+        <header>
+            <h1>📋 Sistema de Registro de Clientes</h1> <!-- Título principal con emoji decorativo -->
+            <p>Ingrese los datos del cliente en el formulario</p> <!-- Subtítulo descriptivo -->
+        </header>
+
+        <!-- Sección del formulario de ingreso de datos -->
+        <section class="form-section">
+            <h2>Datos del Cliente</h2> <!-- Subtítulo de la sección -->
+            
+            <!-- Formulario principal - el id "clienteForm" se usa en JavaScript para capturar el evento submit -->
+            <form id="clienteForm">
+                
+                <!-- Campo para los nombres -->
+                <div class="form-group">
+                    <label for="nombres">Nombres:</label> <!-- Etiqueta del campo -->
+                    <!-- Input de tipo texto, required significa que es obligatorio -->
+                    <input 
+                        type="text" 
+                        id="nombres" 
+                        name="nombres" 
+                        placeholder="Ej: Juan Carlos" 
+                        required
+                        minlength="2">
+                    <!-- El span se usa para mostrar mensajes de error (controlado por JavaScript) -->
+                    <span class="error-message" id="error-nombres"></span>
+                </div>
+
+                <!-- Campo para los apellidos -->
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <!-- Input de tipo texto para apellidos -->
+                    <input 
+                        type="text" 
+                        id="apellidos" 
+                        name="apellidos" 
+                        placeholder="Ej: Pérez García" 
+                        required
+                        minlength="2">
+                    <span class="error-message" id="error-apellidos"></span>
+                </div>
+
+                <!-- Campo para la cédula -->
+                <div class="form-group">
+                    <label for="cedula">Cédula:</label>
+                    <!-- Input tipo text para cédula ecuatoriana, pattern valida el formato -->
+                    <input 
+                        type="text" 
+                        id="cedula" 
+                        name="cedula" 
+                        placeholder="Ej: 1234567890" 
+                        required
+                        pattern="[0-9]{10}"
+                        maxlength="10">
+                    <span class="error-message" id="error-cedula"></span>
+                    <small>Formato: 10 dígitos sin guiones (Ej: 1234567890)</small> <!-- Texto de ayuda -->
+                </div>
+
+                <!-- Campo para el correo electrónico -->
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <!-- Input tipo email valida automáticamente el formato de correo -->
+                    <input 
+                        type="email" 
+                        id="correo" 
+                        name="correo" 
+                        placeholder="Ej: juan@ejemplo.com" 
+                        required>
+                    <span class="error-message" id="error-correo"></span>
+                </div>
+
+                <!-- Campo para la dirección -->
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <!-- Input tipo text para direcciones -->
+                    <input 
+                        type="text" 
+                        id="direccion" 
+                        name="direccion" 
+                        placeholder="Ej: Calle Principal #123, Santo Domingo" 
+                        required
+                        minlength="10">
+                    <span class="error-message" id="error-direccion"></span>
+                </div>
+
+                <!-- Botones de acción del formulario -->
+                <div class="form-buttons">
+                    <!-- Botón para enviar el formulario (tipo submit) -->
+                    <button type="submit" class="btn btn-primary">
+                        ✅ Guardar Cliente
+                    </button>
+                    <!-- Botón para limpiar el formulario (tipo reset) -->
+                    <button type="reset" class="btn btn-secondary">
+                        🔄 Limpiar Formulario
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección para mostrar la lista de clientes registrados -->
+        <section class="clientes-section">
+            <h2>Clientes Registrados</h2>
+            
+            <!-- Contenedor donde se mostrarán las estadísticas -->
+            <div class="stats">
+                <p>Total de clientes: <strong id="totalClientes">0</strong></p>
+            </div>
+
+            <!-- Tabla para mostrar los clientes -->
+            <!-- La tabla está inicialmente oculta si no hay clientes -->
+            <div class="table-container">
+                <table id="tablaClientes">
+                    <thead> <!-- Encabezado de la tabla -->
+                        <tr>
+                            <th>#</th> <!-- Columna de número -->
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Cédula</th>
+                            <th>Correo</th>
+                            <th>Dirección</th>
+                            <th>Acciones</th> <!-- Columna para botones de eliminar -->
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla">
+                        <!-- Aquí se insertarán dinámicamente las filas con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mensaje que se muestra cuando no hay clientes registrados -->
+            <div id="mensajeVacio" class="mensaje-vacio">
+                <p>📭 No hay clientes registrados aún. ¡Agregue el primero!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <!-- Se coloca al final del body para que cargue después del HTML -->
+    <script src="script.js"></script>
+</body>
+</html>
